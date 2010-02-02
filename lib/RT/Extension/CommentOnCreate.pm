@@ -18,12 +18,14 @@ RT::Extension::CommentOnCreate - Adds an optional Comment box to Ticket Creation
     1. perl Makefile.PL
     2. make
     3. make install (may need root permissions)
-    4. Edit your /opt/rt3/etc/RT_SiteConfig.pm 
+    4. patch rt
+        patch -p1 < rt.diff
+    5. Edit your /opt/rt3/etc/RT_SiteConfig.pm 
         Set(@Plugins, qw(RT::Extension::CommentOnCreate));
         or add RT::Extension::CommentOnCreate to your existing @Plugins line
-    5. Clear your mason cache
+    6. Clear your mason cache
          rm -rf /opt/rt3/var/mason_data/obj
-    6. Restart your webserver
+    7. Restart your webserver
 
 =head1 BUGS AND LIMITATIONS
 
