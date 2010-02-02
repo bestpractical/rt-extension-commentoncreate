@@ -46,7 +46,23 @@
 %# 
 %# END BPS TAGGED BLOCK }}}
 <%INIT>
-if ($ARGSRef->{id} eq 'new' && $TicketObj->Id) {
+if ($ARGSRef->{id} eq 'new' && $$TicketObj->Id
+        && $ARGSRef->{'CommentContent'} =~ /\S/ ) {
+    my $sigless = RT::Interface::Web::StripContent(
+            Content => $ARGSRef->{'CommentContent'},
+            ContentType => $ARGSRef->{'CommentContentType'},
+            StripSignature => 1,
+            CurrentUser => $session{CurrentUser},
+    );
+
+    if ( $sigless ) {
+        my $MIMEObj = MakeMIMEEntity(
+            Body    => $sigless,
+            Type    => $ARGSRef->{'CommentContentType'},
+        );
+        my( $status, $msg ) = $$TicketObj->Comment(MIMEObj => $MIMEObj);
+        $RT::Logger->error( "failed to comment on ticket: $msg" );
+    }
 }
 </%INIT>
 <%ARGS>
