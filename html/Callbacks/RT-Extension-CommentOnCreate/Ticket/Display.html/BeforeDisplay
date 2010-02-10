@@ -61,7 +61,7 @@ if ($ARGSRef->{id} eq 'new' && $$TicketObj->Id
             Type    => $ARGSRef->{'CommentContentType'},
         );
         my( $status, $msg ) = $$TicketObj->Comment(MIMEObj => $MIMEObj);
-        $RT::Logger->error( "failed to comment on ticket: $msg" );
+        $RT::Logger->error( "failed to comment on ticket: $msg" ) unless $status;
     }
 }
 </%INIT>
