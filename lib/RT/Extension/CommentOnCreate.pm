@@ -27,6 +27,13 @@ RT::Extension::CommentOnCreate - Adds an optional Comment box to Ticket Creation
          rm -rf /opt/rt3/var/mason_data/obj
     7. Restart your webserver
 
+=head1 CONFIGURATION
+
+Optional configuration options to control the width and height of the Comment textbox
+
+    Set($CommentOnCreateWidth, 80);
+    Set($CommentOnCreateHeight, 190);
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
