@@ -34,6 +34,9 @@ Optional configuration options to control the width and height of the Comment te
     Set($CommentOnCreateWidth, 80);
     Set($CommentOnCreateHeight, 190);
 
+These only apply if you have MessageBoxRichText enabled, otherwise it will inherit the global 
+MessageBoxRichTextHeight attribute.
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
