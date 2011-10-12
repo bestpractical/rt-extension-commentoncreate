@@ -1,5 +1,8 @@
 Revision history for RT-Extension-CommentOnCreate
 
+0.02
+       Make width/height of the boxes configurable
+
 0.01
        Initial release.
 
