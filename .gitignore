@@ -1,5 +1,4 @@
 blib*
-README
 Makefile
 Makefile.old
 Build
@@ -12,3 +11,4 @@ cover_db
 pod2htm*.tmp
 RT-Extension-SquelchWatchers-*
 META.yml
+/MYMETA*
