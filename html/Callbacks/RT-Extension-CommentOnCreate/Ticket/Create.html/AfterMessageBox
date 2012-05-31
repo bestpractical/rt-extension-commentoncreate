@@ -52,6 +52,7 @@
 <& /Elements/MessageBox, Name => 'CommentContent',
                          Default => $ARGS{CommentContent},
                          IncludeSignature => 0,
+                         IncludeArticle => 0,
                          ($width ? (Width => $width) : ()),
                          ($height ? (Height => $height) : ())
 &>
