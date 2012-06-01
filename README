@@ -8,10 +8,13 @@ INSTALLATION
         1. perl Makefile.PL
         2. make
         3. make install (may need root permissions)
-        4. patch rt (if you're running a version less than 3.8.8)
-            patch -p1 < rt.diff
+        4. patch rt (see patches directory)
+           * if you're running a version less than 3.8.8
+            patch -p1 < 3.8.7-after_message_box_callback.diff
+           * if you're running a version less than 4.0.7
+            patch -p1 < 4.0.6-include_article_flag.diff
         5. Edit your /opt/rt4/etc/RT_SiteConfig.pm
-            Set(@Plugins, qw(RT::Extension::CommentOnCreate));
+            Set(@Plugins, (qw(RT::Extension::CommentOnCreate)));
             or add RT::Extension::CommentOnCreate to your existing @Plugins line
         6. Clear your mason cache
              rm -rf /opt/rt4/var/mason_data/obj
