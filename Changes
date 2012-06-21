@@ -1,6 +1,6 @@
 Revision history for RT-Extension-CommentOnCreate
 
-0.03_01
+0.02_01
        Don't include articles in comments (requires RT patch
        for RT version <= 4.0.6)
 
