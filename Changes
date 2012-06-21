@@ -1,5 +1,9 @@
 Revision history for RT-Extension-CommentOnCreate
 
+0.03_01
+       Don't include articles in comments (requires RT patch
+       for RT version <= 4.0.6)
+
 0.02
        Make width/height of the boxes configurable
 

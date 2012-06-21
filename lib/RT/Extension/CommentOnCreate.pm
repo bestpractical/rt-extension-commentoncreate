@@ -1,6 +1,6 @@
 package RT::Extension::CommentOnCreate;
 
-our $VERSION = '0.03';
+our $VERSION = '0.03_01';
 
 use warnings;
 use strict;
