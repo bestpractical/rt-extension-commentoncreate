@@ -11,24 +11,47 @@ use Carp;
 
 RT::Extension::CommentOnCreate - Adds an optional Comment box to Ticket Creation
 
-=head1 INSTALLATION
+=head1 INSTALLATION 
 
-    How to install:
+=over
 
-    1. perl Makefile.PL
-    2. make
-    3. make install (may need root permissions)
-    4. patch rt (see patches directory)
-       * if you're running a version less than 3.8.8
-        patch -p1 < 3.8.7-after_message_box_callback.diff
-       * if you're running a version less than 4.0.7
-        patch -p1 < 4.0.6-include_article_flag.diff
-    5. Edit your /opt/rt4/etc/RT_SiteConfig.pm
-        Set(@Plugins, (qw(RT::Extension::CommentOnCreate)));
-        or add RT::Extension::CommentOnCreate to your existing @Plugins line
-    6. Clear your mason cache
-         rm -rf /opt/rt4/var/mason_data/obj
-    7. Restart your webserver
+=item C<perl Makefile.PL>
+
+=item C<make>
+
+=item C<make install>
+
+May need root permissions
+
+=item C<patch rt (see patches directory)
+
+if you're running a version less than 3.8.8
+
+    patch -p1 < 3.8.7-after_message_box_callback.diff
+
+you're running a version less than 4.0.7
+
+    patch -p1 < 4.0.6-include_article_flag.diff
+
+=item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
+
+If you are using RT 4.2 or greater, add this line:
+
+    Plugin('RT::Extension::CommentOnCreate');
+
+For earlier releases of RT 4, add this line:
+
+    Set(@Plugins, qw(RT::Extension::CommentOnCreate));
+
+or add C<RT::Extension::CommentOnCreate> to your existing C<@Plugins> line.
+
+=item Clear your mason cache
+
+    rm -rf /opt/rt4/var/mason_data/obj
+
+=item Restart your webserver
+
+=back
 
 =head1 CONFIGURATION
 
@@ -48,7 +71,6 @@ Please report any bugs or feature requests to
 C<bug-rt-extension-commentoncreate@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>.
 
-
 =head1 AUTHOR
 
 Kevin Falcone  C<< <falcone@bestpractical.com> >>
@@ -56,7 +78,7 @@ Kevin Falcone  C<< <falcone@bestpractical.com> >>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2010, Best Practical Solutions, LLC.  All rights reserved.
+Copyright (c) 2010-2014, Best Practical Solutions, LLC.  All rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the terms of version 2 of the GNU General Public License.
