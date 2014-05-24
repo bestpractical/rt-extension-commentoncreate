@@ -46,8 +46,15 @@
 %# 
 %# END BPS TAGGED BLOCK }}}
 <%INIT>
-if ($ARGSRef->{id} eq 'new' && $$TicketObj->Id
-        && $ARGSRef->{'CommentContent'} =~ /\S/ ) {
+if (
+    $ARGSRef->{id} eq 'new'
+    &&
+    $$TicketObj->Id
+    &&
+    defined $ARGSRef->{CommentContent}
+    &&
+    $ARGSRef->{CommentContent} =~ /\S/
+) {
     my $sigless = RT::Interface::Web::StripContent(
             Content => $ARGSRef->{'CommentContent'},
             ContentType => $ARGSRef->{'CommentContentType'},
