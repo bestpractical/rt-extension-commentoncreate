@@ -6,6 +6,7 @@ use warnings;
 use strict;
 use Carp;
 
+RT->AddStyleSheets('rt-extension-commentoncreate.css');
 
 =head1 NAME
 
