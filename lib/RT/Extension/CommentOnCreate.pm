@@ -1,6 +1,6 @@
 package RT::Extension::CommentOnCreate;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 use warnings;
 use strict;
@@ -73,7 +73,7 @@ or via the web at
 
 =head1 LICENSE AND COPYRIGHT
 
-This software is Copyright (c) 2014-2021 by Best Practical Solutions
+This software is Copyright (c) 2014-2022 by Best Practical Solutions
 
 This is free software, licensed under:
 
