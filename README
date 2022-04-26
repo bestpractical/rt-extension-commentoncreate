@@ -29,11 +29,13 @@ CONFIGURATION
     Optional configuration options to control the width and height of the
     Comment textbox:
 
-        Set($CommentOnCreateWidth, 80);
-        Set($CommentOnCreateHeight, 190);
+        Set($CommentOnCreateWidth, 80); # For RT 4 only
+        Set($CommentOnCreateHeight, 15);
 
-    These only apply if you have MessageBoxRichText enabled; otherwise it
-    will inherit the global MessageBoxRichTextHeight attribute.
+    If MessageBoxRichText is enabled, use this to control the height of the
+    editor:
+
+        Set($CommentOnCreateRichTextHeight, 200);
 
 AUTHOR
     Best Practical Solutions, LLC <modules@bestpractical.com>
